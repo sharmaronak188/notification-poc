@@ -43,9 +43,7 @@ This POC demonstrates:
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone Repo
-
-```bash
+### Clone repo
 git clone https://github.com/your-username/notifications-poc.git
 cd notifications-poc
 
