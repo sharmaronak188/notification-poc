@@ -43,9 +43,11 @@ This POC demonstrates:
 
 ## ⚙️ Setup Instructions
 
-### Clone repo
-git clone https://github.com/your-username/notifications-poc.git
-cd notifications-poc
+### 1. Clone Repo
+
+```bash
+git clone https://github.com/your-username/insyd-notifications-poc.git
+cd insyd-notifications-poc
 
 ### Backend Setup
 cd backend
