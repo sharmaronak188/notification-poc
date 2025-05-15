@@ -8,19 +8,21 @@ generator client {
 }
 
 model User {
-  id       Int      @id @default(autoincrement())
-  name     String
-  posts    Post[]
-  followers Follow[] @relation("Followees")
-  followees Follow[] @relation("Followers")
-  notifications Notification[] @relation("Receiver")
+  id                Int            @id @default(autoincrement())
+  name              String
+  posts             Post[]
+  followers         Follow[]       @relation("Followees")
+  followees         Follow[]       @relation("Followers")
+  notifications     Notification[] @relation("Receiver")
+  sentNotifications Notification[] @relation("Sender") // 👈 added back relation
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  content   String
-  author    User     @relation(fields: [authorId], references: [id])
-  authorId  Int
+  id            Int            @id @default(autoincrement())
+  content       String
+  author        User           @relation(fields: [authorId], references: [id])
+  authorId      Int
+  notifications Notification[] // 👈 added back relation
 }
 
 model Follow {

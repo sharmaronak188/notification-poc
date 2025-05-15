@@ -47,4 +47,15 @@ app.get("/notifications/:userId", async (req, res) => {
   res.send(notifications);
 });
 
+app.post("/user", async (req, res) => {
+  const { name } = req.body;
+  const user = await prisma.user.create({ data: { name } });
+  res.json(user);
+});
+
+app.get("/users", async (req, res) => {
+  const users = await prisma.user.findMany();
+  res.json(users);
+});
+
 app.listen(4000, () => console.log("Backend running on http://localhost:4000"));
