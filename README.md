@@ -43,9 +43,8 @@ This POC demonstrates:
 
 ## ⚙️ Setup Instructions
 
-### 1. Clone Repo
-
 ```bash
+### Clone Repository
 git clone https://github.com/your-username/insyd-notifications-poc.git
 cd insyd-notifications-poc
 
@@ -72,11 +71,8 @@ npm run dev
 
 Access via: http://localhost:3000/notifications
 
-Testing (via Postman)
+### Testing (via Postman)
 Create users: POST /user
-
 Follow: POST /follow
-
 Create post: POST /post
-
 Get notifications: GET /notifications/:userId
