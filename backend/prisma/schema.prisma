@@ -1,0 +1,45 @@
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  name     String
+  posts    Post[]
+  followers Follow[] @relation("Followees")
+  followees Follow[] @relation("Followers")
+  notifications Notification[] @relation("Receiver")
+}
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  content   String
+  author    User     @relation(fields: [authorId], references: [id])
+  authorId  Int
+}
+
+model Follow {
+  id         Int  @id @default(autoincrement())
+  follower   User @relation("Followers", fields: [followerId], references: [id])
+  followerId Int
+  followee   User @relation("Followees", fields: [followeeId], references: [id])
+  followeeId Int
+}
+
+model Notification {
+  id         Int      @id @default(autoincrement())
+  type       String
+  sender     User     @relation("Sender", fields: [senderId], references: [id])
+  senderId   Int
+  receiver   User     @relation("Receiver", fields: [receiverId], references: [id])
+  receiverId Int
+  post       Post?    @relation(fields: [postId], references: [id])
+  postId     Int?
+  isRead     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
