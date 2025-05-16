@@ -41,7 +41,7 @@ This POC demonstrates:
 └── README.md
 
 ---
-
+```
 ## ⚙️ Setup Instructions
 
 ```bash
