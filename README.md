@@ -40,8 +40,9 @@ This POC demonstrates:
 │ └── package.json
 └── README.md
 
----
 ```
+---
+
 ## ⚙️ Setup Instructions
 
 ```bash
