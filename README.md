@@ -26,6 +26,7 @@ This POC demonstrates:
 
 ## 🏗️ Project Structure
 
+```bash
 .
 ├── backend/
 │ ├── src/
